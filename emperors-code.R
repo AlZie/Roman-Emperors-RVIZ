@@ -4,9 +4,9 @@ library(tidyverse)
 #Import file from GIT
 RAW <- read_csv("https://raw.githubusercontent.com/zonination/emperors/master/emperors.csv")
 
-#modern city and province by hand check
+#modern city and province by hand check. NOT USED LATER YET!
 modern_cities <- tibble(birth.cty = c("Rome","Alba","Narni", "Shahba", "Lugdunum","Antitum","Terracina","Terentinum","Falacrine","Italica","Lanuvium","Milan","Leptis Magna","Iol Caesarea","Emesa","Arca Caesarea","Budalia","Sirmium","Interamna Nahars","Narbo","Salona","Dardania","Romuliana","Naissus", "Felix Romuliana","Arelate","Constantinople","Singidunum", "Cibalae","Cauca"),
-                        birth.cty.mod = c("Rome","Alba","Narni", "Shahba", "Lyon", "Antitum", "Terracina", "Terentinum", "Rieti", "Seville","Lanuvio","Milano","Al Khums","Cherchell","Homs","Arqa", "Martinci","Sremska Mitrovica","Terni", "Narbonne", "Solin", "Çanakkale", "Zajeèar", "Niš", "Zajeèar", "Arles", "Istanbul", "Belgrade", "Vinkovci","Segovia")) # Collected by hand
+                        birth.cty.mod = c("Rome","Alba","Narni", "Shahba", "Lyon", "Antitum", "Terracina", "Terentinum", "Rieti", "Seville","Lanuvio","Milano","Al Khums","Cherchell","Homs","Arqa", "Martinci","Sremska Mitrovica","Terni", "Narbonne", "Solin", "?anakkale", "Zaje?ar", "Ni?", "Zaje?ar", "Arles", "Istanbul", "Belgrade", "Vinkovci","Segovia")) # Collected by hand
 modern_provinces <- tibble(birth.prv = c( "Italia", "Gallia Lugdunensis", "Hispania Baetica", "Libya", "Mauretania", "Syria", "Thrace", "Phrygia", "Unknown", "Pannonia Inferior", "Pannonia", "Africa", "Gallia Narbonensis", "Dalmatian", "Moesia", "Moesia Superior", "Dacia Aureliana", "Hispania"),
                            birth.prv.mod = c("Italy", "France", "Spain", "Libya", "Algeria", "Syria", "Bulgaria", "Turkey", "Unknown", "Serbia", "Serbia", "Africa", "France", "Croatia", "Turkey", "Serbia", "Bulgaria", "Spain"))
 EMP <- RAW %>% left_join(modern_cities) %>% left_join(modern_provinces)
